@@ -1,11 +1,11 @@
 # Kodi Media Center language file
-# Add-on Name: Elementum Burst
-# Add-on id: script.elementum.burst
+# Add-on Name: projectx Burst
+# Add-on id: script.projectx.burst
 # Add-on provider: elgatito
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Elementum Burst\n"
+"Project-Id-Version: projectx Burst\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-09-05 05:53-0400\n"
 "PO-Revision-Date: 2019-10-12 15:41+0200\n"
@@ -147,8 +147,8 @@ msgid "Search timeout (seconds)"
 msgstr "Timeout cerca (secondi)"
 
 msgctxt "#32071"
-msgid "Timeout setting must be lower than Elementum's"
-msgstr "L'impostazione del timeout deve essere inferiore a quella di Elementum"
+msgid "Timeout setting must be lower than projectx's"
+msgstr "L'impostazione del timeout deve essere inferiore a quella di projectx"
 
 msgctxt "#32075"
 msgid "No torrents found"
@@ -279,8 +279,8 @@ msgid "Use proxy settings"
 msgstr "Usa le impostazioni proxy"
 
 msgctxt "#32107"
-msgid "Proxy from Elementum settings"
-msgstr "Proxy dalle impostazioni Elementum"
+msgid "Proxy from projectx settings"
+msgstr "Proxy dalle impostazioni projectx"
 
 msgctxt "#32108"
 msgid "Custom settings"
@@ -347,12 +347,12 @@ msgid "Balanced"
 msgstr "Equilibrato"
 
 msgctxt "#32124"
-msgid "Automatically adjust timeout according to Elementum settings"
-msgstr "Regola automaticamente il timeout in base alle impostazioni di Elementum"
+msgid "Automatically adjust timeout according to projectx settings"
+msgstr "Regola automaticamente il timeout in base alle impostazioni di projectx"
 
 msgctxt "#32125"
-msgid "Proxy http requests with Elementum"
-msgstr "Richieste HTTP proxy con Elementum"
+msgid "Proxy http requests with projectx"
+msgstr "Richieste HTTP proxy con projectx"
 
 msgctxt "#32126"
 msgid "Polish"

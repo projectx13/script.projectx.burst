@@ -5,7 +5,7 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'resources', 'site-packages'))
 
 from burst.burst import search
-from elementum.provider import register
+from projectx.provider import register
 
 
 def search_movie(payload):

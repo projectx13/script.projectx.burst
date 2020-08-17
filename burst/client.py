@@ -12,7 +12,7 @@ import dns.resolver
 import requests
 import xbmcaddon
 
-from elementum.provider import log, get_setting
+from projectx.provider import log, get_setting
 from time import sleep
 from urllib3.util import connection
 from cookielib import LWPCookieJar
@@ -154,9 +154,9 @@ class Client:
         if get_setting("use_public_dns", bool):
             connection.create_connection = patched_create_connection
 
-        if get_setting("use_elementum_proxy", bool):
-            elementum_addon = xbmcaddon.Addon(id='plugin.video.elementum')
-            if elementum_addon and elementum_addon.getSetting('internal_proxy_enabled') == "true":
+        if get_setting("use_projectx_proxy", bool):
+            projectx_addon = xbmcaddon.Addon(id='plugin.video.projectx')
+            if projectx_addon and projectx_addon.getSetting('internal_proxy_enabled') == "true":
                 self.proxy_url = "{0}://{1}:{2}".format("http", "127.0.0.1", "65222")
                 if info and "internal_proxy_url" in info:
                     self.proxy_url = info["internal_proxy_url"]
@@ -167,7 +167,7 @@ class Client:
                 }
         elif proxy['enabled']:
             if proxy['use_type'] == 0 and info and "proxy_url" in info:
-                log.debug("Setting proxy from Elementum: %s" % (info["proxy_url"]))
+                log.debug("Setting proxy from projectx: %s" % (info["proxy_url"]))
             elif proxy['use_type'] == 1:
                 log.debug("Setting proxy with custom settings: %s" % (repr(proxy)))
 

@@ -12,7 +12,7 @@ import xbmcaddon
 import collections
 from glob import glob
 from urlparse import urlparse
-from elementum.provider import log
+from projectx.provider import log
 
 start_time = time.time()
 ADDON = xbmcaddon.Addon()

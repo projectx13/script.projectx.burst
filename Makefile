@@ -1,8 +1,8 @@
-NAME = script.elementum.burst
+NAME = script.projectx.burst
 GIT = git
 GIT_VERSION = $(shell $(GIT) describe --abbrev=0 --tags)
 GIT_USER = elgatito
-GIT_REPOSITORY = script.elementum.burst
+GIT_REPOSITORY = script.projectx.burst
 TAG_VERSION = $(subst v,,$(GIT_VERSION))
 LAST_COMMIT = $(shell $(GIT) log -1 --pretty=\%B)
 VERSION = $(shell sed -ne "s/.*COLOR\]\"\sversion=\"\([0-9a-z\.\-]*\)\".*/\1/p" addon.xml)

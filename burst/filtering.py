@@ -7,7 +7,7 @@ Burst filtering class and methods
 import re
 import hashlib
 from parser.HTMLParser import HTMLParser
-from elementum.provider import log, get_setting
+from projectx.provider import log, get_setting
 from normalize import normalize_string
 from providers.definitions import definitions
 from utils import Magnet, get_int, get_float, clean_number, size_int, get_alias
@@ -38,7 +38,7 @@ class Filtering:
             engine when no results are found (ie. TorLock and TorrentZ)
         queries (list): List of queries to be filtered
         extras (list): List of extras to be filtered
-        info (dict): Payload from Elementum
+        info (dict): Payload from projectx
         kodi_language (str): Language code from Kodi if kodi_language setting is enabled
         language_exceptions (list): List of providers for which not to apply ``kodi_language`` setting
         url (str): URL of this filtering request
@@ -159,7 +159,7 @@ class Filtering:
         self.queries = []
         self.extras = []
 
-        self.info = dict(title="", proxy_url="", internal_proxy_url="", elementum_url="", titles=[])
+        self.info = dict(title="", proxy_url="", internal_proxy_url="", projectx_url="", titles=[])
         self.kodi_language = ''
         self.language_exceptions = []
         self.get_data = {}
@@ -174,7 +174,7 @@ class Filtering:
 
         Args:
             provider (str): Provider ID
-            payload (dict): Elementum search payload
+            payload (dict): projectx search payload
         """
         definition = definitions[provider]
         definition = get_alias(definition, get_setting("%s_alias" % provider))
@@ -197,7 +197,7 @@ class Filtering:
 
         Args:
             provider (str): Provider ID
-            payload (dict): Elementum search payload
+            payload (dict): projectx search payload
         """
         definition = definitions[provider]
         definition = get_alias(definition, get_setting("%s_alias" % provider))
@@ -227,7 +227,7 @@ class Filtering:
 
         Args:
             provider (str): Provider ID
-            payload (dict): Elementum search payload
+            payload (dict): projectx search payload
         """
         definition = definitions[provider]
         definition = get_alias(definition, get_setting("%s_alias" % provider))
@@ -258,7 +258,7 @@ class Filtering:
 
         Args:
             provider (str): Provider ID
-            payload (dict): Elementum search payload
+            payload (dict): projectx search payload
         """
         definition = definitions[provider]
         definition = get_alias(definition, get_setting("%s_alias" % provider))
@@ -288,7 +288,7 @@ class Filtering:
 
         Args:
             provider (str): Provider ID
-            payload (dict): Elementum search payload
+            payload (dict): projectx search payload
         """
         definition = definitions[provider]
         definition = get_alias(definition, get_setting("%s_alias" % provider))
@@ -379,7 +379,7 @@ class Filtering:
                             title = normalize_string(title)
                             log.info("[%s] Using translated '%s' title %s" % (provider, use_language,
                                                                               repr(title)))
-                            log.debug("[%s] Translated titles from Elementum: %s" % (provider, repr(self.info['titles'])))
+                            log.debug("[%s] Translated titles from projectx: %s" % (provider, repr(self.info['titles'])))
                     except Exception as e:
                         import traceback
                         log.error("%s failed with: %s" % (provider, repr(e)))

@@ -33,7 +33,7 @@ release:
   after_script:
     - |
         lftp -c "open 'ftp://$FTP_USER:$FTP_PASS@$FTP_HOST'; \
-        cd script.elementum.burst; \
+        cd script.projectx.burst; \
         mirror --reverse --verbose --exclude '.*' --exclude '.*/' --include-glob addon.xml \
                                                                   --include-glob icon.png \
                                                                   --include-glob fanart.jpg \
@@ -42,6 +42,6 @@ release:
         exit;"
   artifacts:
     paths:
-    - script.elementum.burst-${CI_BUILD_TAG:1}.zip
+    - script.projectx.burst-${CI_BUILD_TAG:1}.zip
   only:
     - tags

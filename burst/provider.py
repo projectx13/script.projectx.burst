@@ -11,12 +11,12 @@ import urllib
 import xbmc
 import xbmcaddon
 from client import Client
-from elementum.provider import log, get_setting, set_setting
+from projectx.provider import log, get_setting, set_setting
 from providers.definitions import definitions, longest
 from utils import ADDON_PATH, get_int, clean_size, get_alias
 
 def generate_payload(provider, generator, filtering, verify_name=True, verify_size=True):
-    """ Payload formatter to format results the way Elementum expects them
+    """ Payload formatter to format results the way projectx expects them
 
     Args:
         provider        (str): Provider ID
@@ -60,7 +60,7 @@ def generate_payload(provider, generator, filtering, verify_name=True, verify_si
         else:
             log.debug(filtering.reason.encode('utf-8'))
 
-    log.debug('[%s] >>>>>> %s would send %d torrents to Elementum <<<<<<<' % (provider, provider, len(results)))
+    log.debug('[%s] >>>>>> %s would send %d torrents to projectx <<<<<<<' % (provider, provider, len(results)))
 
     return results
 

@@ -9,7 +9,7 @@ import re
 import xbmc
 import xbmcgui
 import xbmcaddon
-from elementum.provider import get_setting
+from projectx.provider import get_setting
 from providers.definitions import definitions
 from urlparse import urlparse
 

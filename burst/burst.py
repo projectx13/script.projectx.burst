@@ -14,7 +14,7 @@ from Queue import Queue
 from threading import Thread
 from urlparse import urlparse
 from urllib import unquote
-from elementum.provider import append_headers, get_setting, log
+from projectx.provider import append_headers, get_setting, log
 
 from parser.ehp import Html
 from provider import process
@@ -32,24 +32,24 @@ timeout = get_setting("timeout", int)
 special_chars = "()\"':.[]<>/\\?"
 
 if auto_timeout:
-    elementum_addon = xbmcaddon.Addon(id='plugin.video.elementum')
-    if elementum_addon:
-        if elementum_addon.getSetting('custom_provider_timeout_enabled') == "true":
-            timeout = int(elementum_addon.getSetting('custom_provider_timeout')) - 2
+    projectx_addon = xbmcaddon.Addon(id='plugin.video.projectx')
+    if projectx_addon:
+        if projectx_addon.getSetting('custom_provider_timeout_enabled') == "true":
+            timeout = int(projectx_addon.getSetting('custom_provider_timeout')) - 2
         else:
             timeout = 28
-        log.debug("Using timeout from Elementum: %d seconds" % (timeout))
+        log.debug("Using timeout from projectx: %d seconds" % (timeout))
 
 
 def search(payload, method="general"):
     """ Main search entrypoint
 
     Args:
-        payload (dict): Search payload from Elementum.
+        payload (dict): Search payload from projectx.
         method   (str): Type of search, can be ``general``, ``movie``, ``show``, ``season`` or ``anime``
 
     Returns:
-        list: All filtered results in the format Elementum expects
+        list: All filtered results in the format projectx expects
     """
     log.debug("Searching with payload (%s): %s" % (method, repr(payload)))
 
@@ -82,8 +82,8 @@ def search(payload, method="general"):
         payload['proxy_url'] = ''
     if 'internal_proxy_url' not in payload:
         payload['internal_proxy_url'] = ''
-    if 'elementum_url' not in payload:
-        payload['elementum_url'] = ''
+    if 'projectx_url' not in payload:
+        payload['projectx_url'] = ''
     if 'silent' not in payload:
         payload['silent'] = False
     if 'skip_auth' not in payload:
@@ -120,7 +120,7 @@ def search(payload, method="general"):
 
     p_dialog = xbmcgui.DialogProgressBG()
     if not payload['silent']:
-        p_dialog.create('Elementum [COLOR FFFF6B00]Burst[/COLOR]', translation(32061))
+        p_dialog.create('projectx [COLOR FFFF6B00]Burst[/COLOR]', translation(32061))
 
     for provider in providers:
         available_providers += 1
@@ -568,7 +568,7 @@ def run_provider(provider, payload, method):
 
     Args:
         provider (str): Provider ID
-        payload (dict): Search payload from Elementum
+        payload (dict): Search payload from projectx
         method   (str): Type of search, can be ``general``, ``movie``, ``show``, ``season`` or ``anime``
     """
     log.debug("[%s] Processing %s with %s method" % (provider, provider, method))
