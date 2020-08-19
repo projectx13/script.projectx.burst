@@ -1,7 +1,7 @@
 # Kodi Media Center language file
 # Add-on Name: projectx Burst
 # Add-on id: script.projectx.burst
-# Add-on provider: elgatito
+# Add-on provider: projectx13
 #
 msgid ""
 msgstr ""

@@ -1,7 +1,7 @@
 NAME = script.projectx.burst
 GIT = git
 GIT_VERSION = $(shell $(GIT) describe --abbrev=0 --tags)
-GIT_USER = elgatito
+GIT_USER = projectx13
 GIT_REPOSITORY = script.projectx.burst
 TAG_VERSION = $(subst v,,$(GIT_VERSION))
 LAST_COMMIT = $(shell $(GIT) log -1 --pretty=\%B)

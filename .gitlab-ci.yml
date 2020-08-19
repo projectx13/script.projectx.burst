@@ -24,7 +24,7 @@ build:
     - tags
 
 release:
-  image: elgatito/burst-website:latest
+  image: projectx13/burst-website:latest
   stage: release
   script:
     - make
